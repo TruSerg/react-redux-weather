@@ -1,0 +1,43 @@
+.weather {
+  padding: 50px;
+}
+
+.weatherWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weatherSelectArea {
+  width: 100%;
+  max-width: 300px;
+}
+
+.weatherSelect {
+  color: #fff;
+  font-size: 20px;
+}
+
+.weatherTitle {
+  text-align: center;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.formControl {
+  color: #fff;
+}
+
+.label {
+  color: #fff;
+}
+
+.select {
+  color: #fff !important;
+  border: 1px solid #fff;
+
+  svg {
+    color: #fff;
+  }
+}
+
+

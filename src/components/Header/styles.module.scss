@@ -1,0 +1,37 @@
+.header {
+  padding: 25px 0;
+
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    .headerLogo {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: aqua;
+      font-size: 20px;
+    }
+
+    .headerNavigation {
+      display: flex;
+      gap: 30px;
+
+      .headerBtn {
+        font-size: 18px;
+        color: aqua;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+          color: #00d4d4;
+        }
+      }
+    }
+  }
+}
+
+
+
+
