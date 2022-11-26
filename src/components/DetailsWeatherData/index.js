@@ -35,7 +35,7 @@ const DetailsWeatherData = ({
       </div>
       <div>
         <p className={style.weatherItem}>Скорость ветра</p>
-        <span className={style.weatherDescr}>{windSpeed.toFixed(1)} км/ч</span>
+        <span className={style.weatherDescr}>{Math.round(windSpeed)} км/ч</span>
       </div>
       <div>
         <p className={style.weatherItem}>Давление</p>
