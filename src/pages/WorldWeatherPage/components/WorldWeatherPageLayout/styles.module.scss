@@ -1,0 +1,34 @@
+.worldWeather {
+  margin-top: 50px;
+
+  .worldWeatherWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .worldWeatherInputArea {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .worldWeather {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .worldWeather {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+

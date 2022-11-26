@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-import { fetchWeatherData, setCityName } from "../../../store/weatherDataSlice";
+import { fetchWeatherData } from "../../../store/weatherDataSlice";
 
 import MainWeatherPageLayout from "../components/MainWeatherPageLayout";
 
@@ -11,28 +11,46 @@ import cities from "../../../belCities.json";
 const MainWeatherPageContainer = () => {
   const dispatch = useDispatch();
 
-  const { cityName, temp, weather, isLoading } = useSelector(
-    (state) => state.weatherData
-  );
+  const [selectCityNameValue, setSelectCityNameValue] = useState("");
 
-  const handleSelectChange = (e) => {
-    dispatch(setCityName(e.target.value));
-  };
+  const {
+    cityName,
+    temp,
+    tempMin,
+    tempMax,
+    feelsLike,
+    windSpeed,
+    pressure,
+    humidity,
+    weather,
+    isLoading,
+  } = useSelector((state) => state.weatherData);
+
+  const handleSelectCityNameChange = useCallback((e) => {
+    setSelectCityNameValue(e.target.value);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchWeatherData("Минск"));
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
-    dispatch(fetchWeatherData(cityName));
-  }, [dispatch, cityName]);
+    dispatch(fetchWeatherData(selectCityNameValue));
+  }, [selectCityNameValue]);
 
   return (
     <MainWeatherPageLayout
+      selectCityNameValue={selectCityNameValue}
       cityName={cityName}
       temp={temp}
+      tempMin={tempMin}
+      tempMax={tempMax}
+      feelsLike={feelsLike}
+      windSpeed={windSpeed}
+      pressure={pressure}
+      humidity={humidity}
       weather={weather}
-      handleChange={handleSelectChange}
+      handleSelectCityNameChange={handleSelectCityNameChange}
       cities={cities}
       isLoading={isLoading}
     />

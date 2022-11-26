@@ -1,17 +1,74 @@
-.weatherDeg {
-  color: #fff;
-  font-size: 130px;
-}
-
 .weatherDescrArea {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+
+  .weatherTitle {
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .weatherDeg {
+    color: #fff;
+    font-size: 130px;
+    margin-bottom: 20px;
+  }
+
+  .weatherImg {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .weatherDescr {
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+  }
 }
 
-.weatherDescr {
-  color: #fff;
-  font-size: 35px;
+@media (max-width: 620px) {
+  .weatherDescrArea {
+    padding: 30px 0;
+
+    .weatherTitle {
+      font-size: 26px;
+    }
+
+    .weatherDeg {
+      font-size: 100px;
+    }
+
+    .weatherImg {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .weatherDescr {
+      font-size: 30px;
+    }
+  }
 }
+
+@media (max-width: 420px) {
+  .weatherDescrArea {
+
+    .weatherTitle {
+      font-size: 24px;
+    }
+
+    .weatherDeg {
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+
+    .weatherImg {
+      width: 90px;
+    }
+
+    .weatherDescr {
+      font-size: 22px;
+    }
+  }
+}
+

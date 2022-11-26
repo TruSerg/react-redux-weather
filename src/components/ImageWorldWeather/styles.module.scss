@@ -1,0 +1,15 @@
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 50px 0;
+}
+
+@media (max-width: 420px) {
+  .image {
+    min-height: 50vh;
+  }
+}

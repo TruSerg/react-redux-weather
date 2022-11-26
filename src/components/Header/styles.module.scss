@@ -11,8 +11,13 @@
       display: flex;
       align-items: center;
       font-weight: 600;
-      color: aqua;
-      font-size: 20px;
+      color: #00ffff;
+      font-size: 25px;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: #dbaf00;
+      }
     }
 
     .headerNavigation {
@@ -21,11 +26,70 @@
 
       .headerBtn {
         font-size: 18px;
-        color: aqua;
+        color: rgba(255, 255, 255, 1);
         transition: color .3s ease-in-out;
 
         &:hover {
-          color: #00d4d4;
+          color: #64a2ff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 0;
+
+    .headerWrapper {
+      gap: 20px;
+
+      .headerLogo {
+        font-size: 20px;
+      }
+
+      .headerNavigation {
+        gap: 20px;
+
+        .headerBtn {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    padding: 15px 0;
+
+    .headerWrapper {
+      display: block;
+
+      .headerLogo {
+        margin-bottom: 30px;
+      }
+
+      .headerNavigation {
+        gap: 15px;
+        justify-content: space-around;
+
+        .headerBtn {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    .headerWrapper {
+      .headerNavigation {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .headerBtn {
+          font-size: 14px;
         }
       }
     }

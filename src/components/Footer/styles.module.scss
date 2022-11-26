@@ -1,0 +1,49 @@
+.footer {
+  margin-top: auto;
+  padding: 25px 0;
+  text-align: center;
+
+  .footerItem {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+
+    .footerText {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .footer {
+    padding: 15px 0;
+
+    .footerItem {
+      font-size: 18px;
+
+      .footerText {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+
+    .footerItem {
+      font-size: 16px;
+
+      .footerText {
+        font-size: 20px;
+      }
+    }
+  }
+}

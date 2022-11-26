@@ -1,17 +1,24 @@
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-
 import Container from "../../../../components/Container";
 import WeatherData from "../../../../components/WeatherData";
 import Loader from "../../../../components/Loader";
+import Select from "../../../../components/Select";
+import DetailsWeatherData from "../../../../components/DetailsWeatherData";
 
 import style from "./styles.module.scss";
 
 const MainWeatherPageLayout = ({
+  selectCityNameValue,
   cityName,
   temp,
+  tempMin,
+  tempMax,
+  feelsLike,
+  windSpeed,
+  pressure,
+  humidity,
   weather,
   cities,
-  handleChange,
+  handleSelectCityNameChange,
   isLoading,
 }) => {
   return (
@@ -19,22 +26,12 @@ const MainWeatherPageLayout = ({
       <Container>
         <div className={style.weatherWrapper}>
           <div className={style.weatherSelectArea}>
-            <FormControl fullWidth className={style.formControl}>
-              <Select
-                className={style.select}
-                id="demo-simple-select"
-                value={cityName}
-                onChange={handleChange}
-              >
-                {cities.map(({ id, name }) => {
-                  return (
-                    <MenuItem className={style.item} key={id} value={name}>
-                      {name}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
+            <Select
+              value={selectCityNameValue}
+              label={cityName}
+              array={cities}
+              onChange={handleSelectCityNameChange}
+            />
           </div>
         </div>
         <>
@@ -42,9 +39,16 @@ const MainWeatherPageLayout = ({
             <Loader />
           ) : (
             <>
-              <h1 className={style.weatherTitle}>{cityName}</h1>
+              <WeatherData temp={temp} weather={weather} cityName={cityName} />
 
-              <WeatherData temp={temp} weather={weather} />
+              <DetailsWeatherData
+                tempMin={tempMin}
+                tempMax={tempMax}
+                feelsLike={feelsLike}
+                windSpeed={windSpeed}
+                pressure={pressure}
+                humidity={humidity}
+              />
             </>
           )}
         </>

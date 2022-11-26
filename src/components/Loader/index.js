@@ -4,8 +4,8 @@ import style from "./styles.module.scss";
 
 const Loader = () => {
   return (
-    <div className={style.loader}>
-      <CircularProgress color="info" size={45} />;
+    <div className={style.loaderArea}>
+      <CircularProgress className={style.loader} size={45} />;
     </div>
   );
 };

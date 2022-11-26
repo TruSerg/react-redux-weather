@@ -1,4 +1,4 @@
 export const ROUTES = {
   MAIN_PAGE: "/",
-  DETAILS_PAGE: "/details",
+  WORLD_PAGE: "/world",
 };

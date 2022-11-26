@@ -1,21 +1,32 @@
-import { Box, InputLabel, FormControl, Select } from "@mui/material";
+import { memo } from "react";
+import { FormControl, MenuItem, Select, InputLabel } from "@mui/material";
 
-const BasicSelect = ({ value, name, label, onChange }) => {
+import style from "./styles.module.scss";
+
+const BasicSelect = ({ value, label, onChange, array }) => {
   return (
-    <Box sx={{ maxWidth: 300 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{value}</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          name={name}
-          value={value}
-          label={label}
-          onChange={onChange}
-        />
-      </FormControl>
-    </Box>
+    <FormControl className={style.formControl} fullWidth variant="outlined">
+      <InputLabel className={style.label} id="demo-simple-select-label">
+        Выберите город
+      </InputLabel>
+      <Select
+        className={style.select}
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        label={label}
+        value={value}
+        onChange={onChange}
+      >
+        {array.map(({ id, name }) => {
+          return (
+            <MenuItem key={id} value={name}>
+              {name}
+            </MenuItem>
+          );
+        })}
+      </Select>
+    </FormControl>
   );
 };
 
-export default BasicSelect;
+export default memo(BasicSelect);

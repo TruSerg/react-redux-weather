@@ -1,0 +1,22 @@
+.weatherDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(98, 147, 234, 0.5);
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.weatherItem {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+.weatherDescr {
+  color: #fff;
+  font-size: 20px;
+}
+

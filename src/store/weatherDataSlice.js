@@ -22,15 +22,16 @@ const weatherDataSlice = createSlice({
   initialState: {
     weatherData: {},
     cityName: "",
+    name: "",
     temp: "",
+    tempMin: "",
+    tempMax: "",
+    feelsLike: "",
+    windSpeed: "",
+    pressure: "",
+    humidity: "",
     weather: [],
     isLoading: false,
-  },
-
-  reducers: {
-    setCityName(state, { payload }) {
-      state.cityName = payload;
-    },
   },
 
   extraReducers: {
@@ -41,6 +42,12 @@ const weatherDataSlice = createSlice({
       state.weatherData = payload;
       state.cityName = payload.name;
       state.temp = payload.main.temp;
+      state.tempMin = payload.main.temp_min;
+      state.tempMax = payload.main.temp_max;
+      state.feelsLike = payload.main.feels_like;
+      state.windSpeed = payload.wind.speed;
+      state.pressure = payload.main.pressure;
+      state.humidity = payload.main.humidity;
       state.weather = payload.weather;
       state.isLoading = false;
     },
@@ -49,7 +56,5 @@ const weatherDataSlice = createSlice({
     },
   },
 });
-
-export const { setCityName } = weatherDataSlice.actions;
 
 export default weatherDataSlice.reducer;

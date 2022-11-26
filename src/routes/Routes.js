@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import MainWeatherPageContainer from "../pages/MainWeatherPage/containers/MainWeatherPageContainer";
-import DetailsWeatherPageContainer from "../pages/DetailsWeatherPage/containers/DetailsWeatherPageContainer";
+import WorldWeatherPageContainer from "../pages/WorldWeatherPage/containers/WorldWeatherPageContainer";
 
 import { ROUTES } from "./routeNames";
 
@@ -13,10 +13,7 @@ const AppRoutes = () => {
         path={ROUTES.MAIN_PAGE}
         element={<MainWeatherPageContainer />}
       />
-      <Route
-        path={ROUTES.DETAILS_PAGE}
-        element={<DetailsWeatherPageContainer />}
-      />
+      <Route path={ROUTES.WORLD_PAGE} element={<WorldWeatherPageContainer />} />
 
       <Route path="*" element={<Navigate to={ROUTES.MAIN_PAGE} />} />
     </Routes>
