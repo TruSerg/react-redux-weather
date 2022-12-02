@@ -22,7 +22,8 @@ const weatherDataSlice = createSlice({
   initialState: {
     weatherData: {},
     cityName: "",
-    name: "",
+    lon: "",
+    lat: "",
     temp: "",
     tempMin: "",
     tempMax: "",
@@ -41,6 +42,8 @@ const weatherDataSlice = createSlice({
     [fetchWeatherData.fulfilled]: (state, { payload }) => {
       state.weatherData = payload;
       state.cityName = payload.name;
+      state.lon = payload.coord.lon;
+      state.lat = payload.coord.lat;
       state.temp = payload.main.temp;
       state.tempMin = payload.main.temp_min;
       state.tempMax = payload.main.temp_max;

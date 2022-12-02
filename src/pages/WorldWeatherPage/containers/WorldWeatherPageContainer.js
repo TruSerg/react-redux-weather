@@ -32,12 +32,12 @@ const WorldWeatherPageContainer = () => {
     (e) => {
       e.preventDefault();
 
-      if (inputCityNameValue) {
-        dispatch(fetchWeatherData(inputCityNameValue));
-      }
+      if (inputCityNameValue.trim()) {
+        dispatch(fetchWeatherData(inputCityNameValue.trim().toLowerCase()));
 
-      setInputCityNameValue("");
-      setIsDataLoaded(false);
+        setIsDataLoaded(false);
+        setInputCityNameValue("");
+      }
     },
     [inputCityNameValue]
   );

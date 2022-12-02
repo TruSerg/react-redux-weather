@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import weatherDataReducer from "./weatherDataSlice";
+import weatherDailyReducer from "./weatherDailySlice";
 
 export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
@@ -9,5 +10,6 @@ export const store = configureStore({
     }),
   reducer: {
     weatherData: weatherDataReducer,
+    weatherDaily: weatherDailyReducer,
   },
 });

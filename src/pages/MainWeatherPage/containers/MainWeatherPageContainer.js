@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 import { fetchWeatherData } from "../../../store/weatherDataSlice";
+import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
 
 import MainWeatherPageLayout from "../components/MainWeatherPageLayout";
 
@@ -15,6 +16,8 @@ const MainWeatherPageContainer = () => {
 
   const {
     cityName,
+    lon,
+    lat,
     temp,
     tempMin,
     tempMax,
@@ -37,6 +40,10 @@ const MainWeatherPageContainer = () => {
   useEffect(() => {
     dispatch(fetchWeatherData(selectCityNameValue));
   }, [selectCityNameValue]);
+
+  useEffect(() => {
+    dispatch(fetchWeatherDaily([lat, lon]));
+  }, [lat, lon]);
 
   return (
     <MainWeatherPageLayout
