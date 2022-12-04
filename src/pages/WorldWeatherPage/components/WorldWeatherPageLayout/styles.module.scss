@@ -2,14 +2,15 @@
   margin-top: 50px;
 
   .worldWeatherWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     .worldWeatherInputArea {
       margin: 0 auto;
       width: 100%;
       max-width: 400px;
+    }
+
+    .weatherDaily {
+      margin-bottom: 50px;
     }
   }
 }

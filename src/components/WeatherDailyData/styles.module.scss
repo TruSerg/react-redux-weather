@@ -1,0 +1,23 @@
+.weatherDailyWrapper {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+
+ .weatherDailyDate {
+   font-size: 20px;
+   margin-bottom: 30px;
+   color: rgba(255, 255, 255, 0.5);
+ }
+
+  .weatherDailyImg {
+    width: 80px;
+  }
+
+  .weatherDailyTemp {
+    font-size: 18px;
+  }
+
+  .weatherDailyDescription {
+    font-size: 18px;
+  }
+}

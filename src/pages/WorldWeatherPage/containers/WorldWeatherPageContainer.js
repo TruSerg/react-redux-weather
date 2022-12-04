@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import { fetchWeatherData } from "../../../store/weatherDataSlice";
 
 import WorldWeatherPageLayout from "../components/WorldWeatherPageLayout";
+import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
 
 const WorldWeatherPageContainer = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ const WorldWeatherPageContainer = () => {
 
   const {
     cityName,
+    lon,
+    lat,
     temp,
     tempMin,
     tempMax,
@@ -23,6 +26,8 @@ const WorldWeatherPageContainer = () => {
     weather,
     isLoading,
   } = useSelector((state) => state.weatherData);
+
+  const { weatherDailyList } = useSelector((state) => state.weatherDaily);
 
   const handleChange = useCallback((e) => {
     setInputCityNameValue(e.target.value);
@@ -42,8 +47,13 @@ const WorldWeatherPageContainer = () => {
     [inputCityNameValue]
   );
 
+  useEffect(() => {
+    dispatch(fetchWeatherDaily([lat, lon]));
+  }, [lat, lon]);
+
   return (
     <WorldWeatherPageLayout
+      weatherDailyList={weatherDailyList}
       isDataLoaded={isDataLoaded}
       inputCityNameValue={inputCityNameValue}
       cityName={cityName}

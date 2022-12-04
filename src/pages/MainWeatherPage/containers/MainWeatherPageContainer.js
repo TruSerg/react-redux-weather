@@ -29,6 +29,8 @@ const MainWeatherPageContainer = () => {
     isLoading,
   } = useSelector((state) => state.weatherData);
 
+  const { weatherDailyList } = useSelector((state) => state.weatherDaily);
+
   const handleSelectCityNameChange = useCallback((e) => {
     setSelectCityNameValue(e.target.value);
   }, []);
@@ -47,6 +49,7 @@ const MainWeatherPageContainer = () => {
 
   return (
     <MainWeatherPageLayout
+      weatherDailyList={weatherDailyList}
       selectCityNameValue={selectCityNameValue}
       cityName={cityName}
       temp={temp}

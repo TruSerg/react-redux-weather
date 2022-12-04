@@ -6,8 +6,10 @@ import DetailsWeatherData from "../../../../components/DetailsWeatherData";
 import WorldImage from "../../../../components/ImageWorldWeather";
 
 import style from "./styles.module.scss";
+import WeatherSlider from "../../../../components/WeatherSlider";
 
 const WorldWeatherPageLayout = ({
+  weatherDailyList,
   isDataLoaded,
   inputCityNameValue,
   cityName,
@@ -34,34 +36,38 @@ const WorldWeatherPageLayout = ({
               onSubmit={handleSubmit}
             />
           </div>
+
+          {isDataLoaded ? (
+            <WorldImage />
+          ) : (
+            <>
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <>
+                  <WeatherData
+                    temp={temp}
+                    weather={weather}
+                    cityName={cityName}
+                  />
+
+                  <div className={style.weatherDaily}>
+                    <WeatherSlider weatherDailyList={weatherDailyList} />
+                  </div>
+
+                  <DetailsWeatherData
+                    tempMin={tempMin}
+                    tempMax={tempMax}
+                    feelsLike={feelsLike}
+                    windSpeed={windSpeed}
+                    pressure={pressure}
+                    humidity={humidity}
+                  />
+                </>
+              )}
+            </>
+          )}
         </div>
-
-        {isDataLoaded ? (
-          <WorldImage />
-        ) : (
-          <>
-            {isLoading ? (
-              <Loader />
-            ) : (
-              <>
-                <WeatherData
-                  temp={temp}
-                  weather={weather}
-                  cityName={cityName}
-                />
-
-                <DetailsWeatherData
-                  tempMin={tempMin}
-                  tempMax={tempMax}
-                  feelsLike={feelsLike}
-                  windSpeed={windSpeed}
-                  pressure={pressure}
-                  humidity={humidity}
-                />
-              </>
-            )}
-          </>
-        )}
       </Container>
     </div>
   );

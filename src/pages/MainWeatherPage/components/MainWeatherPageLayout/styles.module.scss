@@ -2,17 +2,19 @@
     margin-top: 50px;
 
   .weatherWrapper {
-    display: flex;
-    justify-content: flex-end;
 
     .weatherSelectArea {
-      width: 100%;
-      max-width: 300px;
+      display: flex;
+      justify-content: flex-end;
 
-      .weatherSelect {
-        color: #fff;
-        font-size: 20px;
+     .weatherSelect {
+       width: 100%;
+       max-width: 300px;
       }
+    }
+
+    .weatherDaily {
+      margin-bottom: 50px;
     }
   }
 }
@@ -22,13 +24,14 @@
     margin-top: 30px;
 
     .weatherWrapper {
-      justify-content: center;
-
+      .weatherSelectArea {
+        justify-content: center;
+      }
     }
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 420px) {
   .weather {
     margin-top: 20px;
   }
