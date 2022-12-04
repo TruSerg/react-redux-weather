@@ -21,9 +21,15 @@
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 420px) {
   .worldWeather {
     margin-top: 20px;
+
+    .worldWeatherWrapper {
+      .weatherDaily {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 

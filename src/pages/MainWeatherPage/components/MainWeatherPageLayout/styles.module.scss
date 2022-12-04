@@ -34,6 +34,12 @@
 @media (max-width: 420px) {
   .weather {
     margin-top: 20px;
+
+    .weatherWrapper {
+      .weatherDaily {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
