@@ -1,6 +1,6 @@
 .weatherDescrArea {
   text-align: center;
-  padding: 50px 0;
+  padding: 25px 0;
 
   .weatherTitle {
     font-size: 40px;
@@ -12,12 +12,10 @@
   .weatherDeg {
     color: #fff;
     font-size: 130px;
-    margin-bottom: 20px;
   }
 
   .weatherImg {
     width: 120px;
-    margin-bottom: 20px;
   }
 
   .weatherDescr {
@@ -29,7 +27,7 @@
 
 @media (max-width: 620px) {
   .weatherDescrArea {
-    padding: 30px 0;
+    padding: 20px 0;
 
     .weatherTitle {
       font-size: 26px;
@@ -41,7 +39,6 @@
 
     .weatherImg {
       width: 100px;
-      margin-bottom: 10px;
     }
 
     .weatherDescr {
@@ -52,14 +49,12 @@
 
 @media (max-width: 420px) {
   .weatherDescrArea {
-
     .weatherTitle {
       font-size: 24px;
     }
 
     .weatherDeg {
       font-size: 80px;
-      margin-bottom: 10px;
     }
 
     .weatherImg {

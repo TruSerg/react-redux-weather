@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   background-color: rgba(98, 147, 234, 0.5);
   gap: 50px;
@@ -22,7 +22,7 @@
 
 @media (max-width: 420px) {
   .weatherDetails {
-    padding: 20px;
+    padding: 15px;
   }
 }
 

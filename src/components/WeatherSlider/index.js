@@ -8,36 +8,42 @@ import "swiper/css/free-mode";
 
 import WeatherDailyData from "../WeatherDailyData";
 
+import style from "./styles.module.scss";
+
 const WeatherSlider = ({ weatherDailyList }) => {
   return (
-    <div>
+    <div className={style.weatherSlider}>
       <Swiper
         className="mySwiper"
         freeMode={true}
         grabCursor={true}
         modules={[FreeMode]}
-        spaceBetween={10}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          490: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
+          1336: {
+            slidesPerView: 10,
           },
           1024: {
+            slidesPerView: 8,
+          },
+          768: {
+            slidesPerView: 6,
+          },
+          490: {
             slidesPerView: 4,
           },
-          1336: {
-            slidesPerView: 5,
+          320: {
+            slidesPerView: 2,
           },
         }}
       >
-        {weatherDailyList.map(({ dt, dt_txt, main, weather }) => (
+        {weatherDailyList.map(({ dt, dt_txt, main, weather, wind }) => (
           <SwiperSlide key={dt}>
-            <WeatherDailyData date={dt_txt} main={main} weather={weather} />
+            <WeatherDailyData
+              date={dt_txt}
+              main={main}
+              weather={weather}
+              wind={wind}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

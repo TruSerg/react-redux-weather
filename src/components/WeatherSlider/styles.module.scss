@@ -1,0 +1,15 @@
+.weatherSlider {
+  padding: 25px 0;
+}
+
+@media (max-width: 620px) {
+  .weatherSlider {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .weatherSlider {
+    padding: 10px 0;
+  }
+}

@@ -39,7 +39,7 @@ const DetailsWeatherData = ({
       </div>
       <div>
         <p className={style.weatherItem}>Давление</p>
-        <span className={style.weatherDescr}>{pressure} mbar</span>
+        <span className={style.weatherDescr}>{pressure}mbar</span>
       </div>
       <div>
         <p className={style.weatherItem}>Влажность</p>

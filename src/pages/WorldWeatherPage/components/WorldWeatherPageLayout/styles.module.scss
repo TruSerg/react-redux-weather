@@ -8,10 +8,6 @@
       width: 100%;
       max-width: 400px;
     }
-
-    .weatherDaily {
-      margin-bottom: 50px;
-    }
   }
 }
 
@@ -24,12 +20,6 @@
 @media (max-width: 420px) {
   .worldWeather {
     margin-top: 20px;
-
-    .worldWeatherWrapper {
-      .weatherDaily {
-        margin-bottom: 20px;
-      }
-    }
   }
 }
 

@@ -8,6 +8,7 @@ import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
 import MainWeatherPageLayout from "../components/MainWeatherPageLayout";
 
 import cities from "../../../belCities.json";
+import { logDOM } from "@testing-library/react";
 
 const MainWeatherPageContainer = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,8 @@ const MainWeatherPageContainer = () => {
   useEffect(() => {
     dispatch(fetchWeatherDaily([lat, lon]));
   }, [lat, lon]);
+
+  console.log(weatherDailyList);
 
   return (
     <MainWeatherPageLayout

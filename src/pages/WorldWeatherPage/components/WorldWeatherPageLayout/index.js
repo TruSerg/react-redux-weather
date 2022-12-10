@@ -51,9 +51,7 @@ const WorldWeatherPageLayout = ({
                     cityName={cityName}
                   />
 
-                  <div className={style.weatherDaily}>
-                    <WeatherSlider weatherDailyList={weatherDailyList} />
-                  </div>
+                  <WeatherSlider weatherDailyList={weatherDailyList} />
 
                   <DetailsWeatherData
                     tempMin={tempMin}

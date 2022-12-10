@@ -1,23 +1,34 @@
 .weatherDailyWrapper {
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+  padding: 10px;
   text-align: center;
   color: #fff;
 
  .weatherDailyDate {
-   font-size: 20px;
-   margin-bottom: 30px;
+   font-size: 17px;
+   margin-bottom: 20px;
    color: rgba(255, 255, 255, 0.5);
  }
 
-  .weatherDailyImg {
-    width: 80px;
-  }
+  .weatherDailyDetails {
+    margin-top: auto;
+    .weatherDailyTemp {
+      font-size: 20px;
+    }
 
-  .weatherDailyTemp {
-    font-size: 18px;
-  }
+    .weatherDailyContent {
+      margin-top: auto;
+      min-height: 130px;
 
-  .weatherDailyDescription {
-    font-size: 18px;
+      .weatherDailyImg {
+        width: 80px;
+      }
+
+      .weatherDailyDescription {
+        font-size: 16px;
+      }
+    }
   }
 }
