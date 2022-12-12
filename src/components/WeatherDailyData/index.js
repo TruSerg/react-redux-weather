@@ -1,15 +1,31 @@
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { memo } from "react";
+import { Button } from "@mui/material";
 
 import moment from "moment";
 import ru from "moment/locale/ru";
 
+import { foundItemWeatherDaily } from "../../store/weatherDailySlice";
+
+import { ROUTES } from "../../routes/routeNames";
+
 import style from "./styles.module.scss";
 
-const WeatherDailyData = ({ date, main, weather, wind }) => {
+const WeatherDailyData = ({ dt, date, main, weather, wind }) => {
+  const dispatch = useDispatch();
   return (
     <div className={style.weatherDailyWrapper}>
+      <Link
+        className={style.btn}
+        onClick={() => dispatch(foundItemWeatherDaily(dt))}
+        to={ROUTES.DETAILS_PAGE}
+      >
+        ПОДРОБНЕЕ
+      </Link>
+
       <p className={style.weatherDailyDate}>
-        {moment(date).locale("ru").format("D MMMM  HH:mm")}
+        {moment(date).locale("ru").format("D MMMM HH:mm")}
       </p>
       <div className={style.weatherDailyDetails}>
         <p className={style.weatherDailyTemp}>
@@ -26,7 +42,9 @@ const WeatherDailyData = ({ date, main, weather, wind }) => {
             <p className={style.weatherDailyDescription}>{description}</p>
           </div>
         ))}
-        <p>{Math.round(wind.speed)} км/ч</p>
+        <p className={style.weatherDailyDescription}>
+          {Math.round(wind.speed)} км/ч
+        </p>
       </div>
     </div>
   );

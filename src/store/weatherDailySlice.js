@@ -22,9 +22,17 @@ const weatherDailySlice = createSlice({
   initialState: {
     weatherDaily: {},
     weatherDailyList: [],
+    weatherDailyDetailsItem: {},
     isLoading: false,
   },
 
+  reducers: {
+    foundItemWeatherDaily(state, { payload }) {
+      state.weatherDailyDetailsItem = state.weatherDailyList.find(
+        (item) => item.dt === payload
+      );
+    },
+  },
   extraReducers: {
     [fetchWeatherDaily.pending]: (state) => {
       state.isLoading = true;
@@ -32,12 +40,13 @@ const weatherDailySlice = createSlice({
     [fetchWeatherDaily.fulfilled]: (state, { payload }) => {
       state.weatherDaily = payload;
       state.weatherDailyList = payload.list;
-      state.isLoading = false;
     },
     [fetchWeatherDaily.rejected]: (state) => {
       state.isLoading = false;
     },
   },
 });
+
+export const { foundItemWeatherDaily } = weatherDailySlice.actions;
 
 export default weatherDailySlice.reducer;

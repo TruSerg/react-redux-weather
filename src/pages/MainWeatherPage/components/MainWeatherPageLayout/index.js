@@ -5,8 +5,7 @@ import Select from "../../../../components/Select";
 import DetailsWeatherData from "../../../../components/DetailsWeatherData";
 
 import style from "./styles.module.scss";
-import ImageWorldWeather from "../../../../components/ImageWorldWeather";
-import WeatherDailyData from "../../../../components/WeatherDailyData";
+
 import WeatherSlider from "../../../../components/WeatherSlider";
 
 const MainWeatherPageLayout = ({

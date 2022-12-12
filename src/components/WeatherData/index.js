@@ -7,7 +7,7 @@ const WeatherDataLayout = ({ temp, weather, cityName }) => {
     <div className={style.weatherDescrArea}>
       <h1 className={style.weatherTitle}>{cityName}</h1>
       <p className={style.weatherDeg}>
-        {Math.floor(temp)}
+        {Math.round(temp)}
         {"\u00b0"}
       </p>
 

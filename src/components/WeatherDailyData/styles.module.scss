@@ -6,6 +6,17 @@
   text-align: center;
   color: #fff;
 
+  .btn {
+    font-size: 12px;
+    padding: 15px 10px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: #64a2ff !important;
+    }
+  }
+
  .weatherDailyDate {
    font-size: 17px;
    margin-bottom: 20px;

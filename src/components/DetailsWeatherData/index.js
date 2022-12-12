@@ -11,39 +11,43 @@ const DetailsWeatherData = ({
   humidity,
 }) => {
   return (
-    <div className={style.weatherDetails}>
-      <div>
-        <p className={style.weatherItem}>Мин</p>
-        <span className={style.weatherDescr}>
-          {Math.floor(tempMin)}
-          {"\u00b0"}C
-        </span>
-      </div>
-      <div>
-        <p className={style.weatherItem}>Макс</p>
-        <span className={style.weatherDescr}>
-          {Math.floor(tempMax)}
-          {"\u00b0"}C
-        </span>
-      </div>
-      <div>
-        <p className={style.weatherItem}>Ощущаеться</p>
-        <span className={style.weatherDescr}>
-          {Math.floor(feelsLike)}
-          {"\u00b0"}C
-        </span>
-      </div>
-      <div>
-        <p className={style.weatherItem}>Скорость ветра</p>
-        <span className={style.weatherDescr}>{Math.round(windSpeed)} км/ч</span>
-      </div>
-      <div>
-        <p className={style.weatherItem}>Давление</p>
-        <span className={style.weatherDescr}>{pressure}mbar</span>
-      </div>
-      <div>
-        <p className={style.weatherItem}>Влажность</p>
-        <span className={style.weatherDescr}>{humidity}%</span>
+    <div className={style.weatherDetailsArea}>
+      <div className={style.weatherDetails}>
+        <div>
+          <p className={style.weatherItem}>Мин</p>
+          <span className={style.weatherDescr}>
+            {Math.round(tempMin)}
+            {"\u00b0"}C
+          </span>
+        </div>
+        <div>
+          <p className={style.weatherItem}>Макс</p>
+          <span className={style.weatherDescr}>
+            {Math.round(tempMax)}
+            {"\u00b0"}C
+          </span>
+        </div>
+        <div>
+          <p className={style.weatherItem}>Ощущаеться</p>
+          <span className={style.weatherDescr}>
+            {Math.round(feelsLike)}
+            {"\u00b0"}C
+          </span>
+        </div>
+        <div>
+          <p className={style.weatherItem}>Скорость ветра</p>
+          <span className={style.weatherDescr}>
+            {Math.round(windSpeed)} км/ч
+          </span>
+        </div>
+        <div>
+          <p className={style.weatherItem}>Давление</p>
+          <span className={style.weatherDescr}>{pressure}mbar</span>
+        </div>
+        <div>
+          <p className={style.weatherItem}>Влажность</p>
+          <span className={style.weatherDescr}>{humidity}%</span>
+        </div>
       </div>
     </div>
   );

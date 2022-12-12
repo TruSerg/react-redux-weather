@@ -10,7 +10,7 @@ import WeatherDailyData from "../WeatherDailyData";
 
 import style from "./styles.module.scss";
 
-const WeatherSlider = ({ weatherDailyList }) => {
+const WeatherSlider = ({ weatherDailyList, found }) => {
   return (
     <div className={style.weatherSlider}>
       <Swiper
@@ -39,6 +39,8 @@ const WeatherSlider = ({ weatherDailyList }) => {
         {weatherDailyList.map(({ dt, dt_txt, main, weather, wind }) => (
           <SwiperSlide key={dt}>
             <WeatherDailyData
+              found={found}
+              dt={dt}
               date={dt_txt}
               main={main}
               weather={weather}
