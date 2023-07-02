@@ -1,5 +1,6 @@
 export const ROUTES = {
-  MAIN_PAGE: "/",
-  WORLD_PAGE: "/world",
+  LOCATION_WEATHER_PAGE: "/",
+  BELARUS_WEATHER_PAGE: "/belarus",
+  WORLD_WEATHER_PAGE: "/world",
   DETAILS_PAGE: "/details",
 };

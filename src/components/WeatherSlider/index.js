@@ -37,7 +37,7 @@ const WeatherSlider = ({ weatherDailyList, found }) => {
         }}
       >
         {weatherDailyList.map(({ dt, dt_txt, main, weather, wind }) => (
-          <SwiperSlide key={dt}>
+          <SwiperSlide className={style.slide} key={dt}>
             <WeatherDailyData
               found={found}
               dt={dt}

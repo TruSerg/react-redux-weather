@@ -22,6 +22,7 @@ const weatherDailySlice = createSlice({
   initialState: {
     weatherDaily: {},
     weatherDailyList: [],
+    weatherFiveDaysList: [],
     weatherDailyDetailsItem: {},
     isLoading: false,
   },
@@ -30,6 +31,11 @@ const weatherDailySlice = createSlice({
     foundItemWeatherDaily(state, { payload }) {
       state.weatherDailyDetailsItem = state.weatherDailyList.find(
         (item) => item.dt === payload
+      );
+    },
+    getFiveDaysForecast(state) {
+      state.weatherFiveDaysList = state.weatherDailyList.filter(
+        (item) => item.dt_txt === 12
       );
     },
   },
@@ -47,6 +53,7 @@ const weatherDailySlice = createSlice({
   },
 });
 
-export const { foundItemWeatherDaily } = weatherDailySlice.actions;
+export const { foundItemWeatherDaily, getFiveDaysForecast } =
+  weatherDailySlice.actions;
 
 export default weatherDailySlice.reducer;

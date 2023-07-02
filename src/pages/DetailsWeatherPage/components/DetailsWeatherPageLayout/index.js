@@ -1,14 +1,11 @@
-import { Button } from "@mui/material";
-import { KeyboardBackspace } from "@mui/icons-material";
-
 import WeatherData from "../../../../components/WeatherData";
 import DetailsWeatherData from "../../../../components/DetailsWeatherData";
 import Container from "../../../../components/Container";
+import BackButton from "../../../../components/Buttons/BackButton";
 
 import style from "./styles.module.scss";
 
 const DetailsWeatherPageLayout = ({
-  goBack,
   cityName,
   temp,
   weather,
@@ -23,15 +20,7 @@ const DetailsWeatherPageLayout = ({
     <div>
       <Container>
         <div className={style.button}>
-          <Button
-            className={style.btn}
-            size="large"
-            color="inherit"
-            onClick={goBack}
-          >
-            <KeyboardBackspace />
-            Назад
-          </Button>
+          <BackButton />
         </div>
 
         <WeatherData cityName={cityName} temp={temp} weather={weather} />

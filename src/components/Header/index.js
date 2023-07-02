@@ -24,10 +24,13 @@ const Header = () => {
           </a>
 
           <nav className={style.headerNavigation}>
-            <Link to={ROUTES.MAIN_PAGE}>
+            <Link to={ROUTES.LOCATION_WEATHER_PAGE}>
+              <Button className={style.headerBtn}>Ваша локация</Button>
+            </Link>
+            <Link to={ROUTES.BELARUS_WEATHER_PAGE}>
               <Button className={style.headerBtn}>Погода в Беларуси</Button>
             </Link>
-            <Link to={ROUTES.WORLD_PAGE}>
+            <Link to={ROUTES.WORLD_WEATHER_PAGE}>
               <Button className={style.headerBtn}>Погода в мире</Button>
             </Link>
           </nav>

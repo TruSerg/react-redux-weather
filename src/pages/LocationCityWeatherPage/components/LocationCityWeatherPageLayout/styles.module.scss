@@ -1,0 +1,20 @@
+.weather {
+  margin-top: 50px;
+
+  .weatherBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 620px) {
+  .weather {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .weather {
+    margin-top: 20px;
+  }
+}

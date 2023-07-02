@@ -4,13 +4,17 @@ import Loader from "../../../../components/Loader";
 import WeatherData from "../../../../components/WeatherData";
 import DetailsWeatherData from "../../../../components/DetailsWeatherData";
 import WorldImage from "../../../../components/ImageWorldWeather";
+import WeatherSlider from "../../../../components/WeatherSlider";
+import ShowComponentButton from "../../../../components/Buttons/ShowComponentButton";
 
 import style from "./styles.module.scss";
-import WeatherSlider from "../../../../components/WeatherSlider";
 
 const WorldWeatherPageLayout = ({
-  weatherDailyList,
+  showMode,
+  isLoading,
   isDataLoaded,
+  weatherDailyList,
+  fiveDaysWeatherList,
   inputCityNameValue,
   cityName,
   temp,
@@ -21,9 +25,9 @@ const WorldWeatherPageLayout = ({
   pressure,
   humidity,
   weather,
-  isLoading,
   handleChange,
   handleSubmit,
+  handleShowModeComponent,
 }) => {
   return (
     <div className={style.worldWeather}>
@@ -51,7 +55,22 @@ const WorldWeatherPageLayout = ({
                     cityName={cityName}
                   />
 
-                  <WeatherSlider weatherDailyList={weatherDailyList} />
+                  <div className={style.weatherBtn}>
+                    <ShowComponentButton
+                      text={
+                        showMode
+                          ? "Прогноз на 5 дней"
+                          : "Более детальный прогноз"
+                      }
+                      handleClick={handleShowModeComponent}
+                    />
+                  </div>
+
+                  {showMode ? (
+                    <WeatherSlider weatherDailyList={weatherDailyList} />
+                  ) : (
+                    <WeatherSlider weatherDailyList={fiveDaysWeatherList} />
+                  )}
 
                   <DetailsWeatherData
                     tempMin={tempMin}

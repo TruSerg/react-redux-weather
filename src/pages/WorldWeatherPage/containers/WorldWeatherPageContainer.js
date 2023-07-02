@@ -2,9 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useCallback, useEffect } from "react";
 
 import { fetchWeatherData } from "../../../store/weatherDataSlice";
+import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
+
+import {
+  useGetFiveDaysWeatherForecast,
+  useShowModeComponent,
+} from "../../../hooks";
 
 import WorldWeatherPageLayout from "../components/WorldWeatherPageLayout";
-import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
 
 const WorldWeatherPageContainer = () => {
   const dispatch = useDispatch();
@@ -28,6 +33,11 @@ const WorldWeatherPageContainer = () => {
   } = useSelector((state) => state.weatherData);
 
   const { weatherDailyList } = useSelector((state) => state.weatherDaily);
+
+  const { fiveDaysWeatherList } =
+    useGetFiveDaysWeatherForecast(weatherDailyList);
+
+  const { showMode, handleShowModeComponent } = useShowModeComponent();
 
   const handleChange = useCallback((e) => {
     setInputCityNameValue(e.target.value);
@@ -53,8 +63,11 @@ const WorldWeatherPageContainer = () => {
 
   return (
     <WorldWeatherPageLayout
-      weatherDailyList={weatherDailyList}
+      showMode={showMode}
+      isLoading={isLoading}
       isDataLoaded={isDataLoaded}
+      weatherDailyList={weatherDailyList}
+      fiveDaysWeatherList={fiveDaysWeatherList}
       inputCityNameValue={inputCityNameValue}
       cityName={cityName}
       temp={temp}
@@ -65,9 +78,9 @@ const WorldWeatherPageContainer = () => {
       pressure={pressure}
       humidity={humidity}
       weather={weather}
-      isLoading={isLoading}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
+      handleShowModeComponent={handleShowModeComponent}
     />
   );
 };

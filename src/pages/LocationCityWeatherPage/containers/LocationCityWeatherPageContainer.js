@@ -1,7 +1,7 @@
-import { useEffect, useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
+import { getUserLocationWeather } from "../../../store/getUserLocationWeather";
 import { fetchWeatherData } from "../../../store/weatherDataSlice";
 import { fetchWeatherDaily } from "../../../store/weatherDailySlice";
 
@@ -10,17 +10,12 @@ import {
   useShowModeComponent,
 } from "../../../hooks";
 
-import MainWeatherPageLayout from "../components/MainWeatherPageLayout";
+import LocationCityWeatherPageLayout from "../components/LocationCityWeatherPageLayout";
 
-import cities from "../../../belCitiesList.json";
-
-const MainWeatherPageContainer = () => {
+const LocationCityWeatherPageContainer = () => {
   const dispatch = useDispatch();
 
-  const [selectCityNameValue, setSelectCityNameValue] = useState("");
-
   const {
-    cityName,
     lon,
     lat,
     temp,
@@ -36,34 +31,31 @@ const MainWeatherPageContainer = () => {
 
   const { weatherDailyList } = useSelector((state) => state.weatherDaily);
 
+  const { cityName } = useSelector((state) => state.getUserLocation);
+
   const { fiveDaysWeatherList } =
     useGetFiveDaysWeatherForecast(weatherDailyList);
 
   const { showMode, handleShowModeComponent } = useShowModeComponent();
 
-  const handleSelectCityNameChange = useCallback((e) => {
-    setSelectCityNameValue(e.target.value);
+  useEffect(() => {
+    dispatch(getUserLocationWeather());
   }, []);
 
   useEffect(() => {
-    dispatch(fetchWeatherData("Минск"));
-  }, []);
-
-  useEffect(() => {
-    dispatch(fetchWeatherData(selectCityNameValue));
-  }, [selectCityNameValue]);
+    dispatch(fetchWeatherData(cityName));
+  }, [cityName]);
 
   useEffect(() => {
     dispatch(fetchWeatherDaily([lat, lon]));
   }, [lat, lon]);
 
   return (
-    <MainWeatherPageLayout
-      isLoading={isLoading}
+    <LocationCityWeatherPageLayout
       showMode={showMode}
+      isLoading={isLoading}
       weatherDailyList={weatherDailyList}
       fiveDaysWeatherList={fiveDaysWeatherList}
-      selectCityNameValue={selectCityNameValue}
       cityName={cityName}
       temp={temp}
       tempMin={tempMin}
@@ -73,11 +65,9 @@ const MainWeatherPageContainer = () => {
       pressure={pressure}
       humidity={humidity}
       weather={weather}
-      handleSelectCityNameChange={handleSelectCityNameChange}
       handleShowModeComponent={handleShowModeComponent}
-      cities={cities}
     />
   );
 };
 
-export default MainWeatherPageContainer;
+export default LocationCityWeatherPageContainer;

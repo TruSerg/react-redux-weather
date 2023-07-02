@@ -1,5 +1,12 @@
 .weatherSlider {
+  text-align: center;
   padding: 25px 0;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 620px) {

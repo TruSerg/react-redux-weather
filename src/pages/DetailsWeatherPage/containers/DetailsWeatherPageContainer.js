@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import DetailsWeatherPageLayout from "../components/DetailsWeatherPageLayout";
 
@@ -7,17 +6,12 @@ import moment from "moment";
 import ru from "moment/locale/ru";
 
 const DetailsWeatherPageContainer = () => {
-  const navigate = useNavigate();
-
   const { weatherDailyDetailsItem } = useSelector(
     (state) => state.weatherDaily
   );
 
-  const goBack = () => navigate(-1);
-
   return (
     <DetailsWeatherPageLayout
-      goBack={goBack}
       cityName={moment(weatherDailyDetailsItem.dt_txt)
         .locale("ru")
         .format("D MMMM HH:mm")}

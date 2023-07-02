@@ -26,12 +26,21 @@
 @media (max-width: 620px) {
   .weatherDetailsArea {
     padding: 20px 0;
+
+    .weatherDetails {
+      gap: 40px;
+    }
   }
 }
 
 @media (max-width: 420px) {
-  .weatherDetails {
-    padding: 15px;
+  .weatherDetailsArea {
+    padding: 20px 0;
+
+    .weatherDetails {
+      padding: 15px;
+      gap: 30px;
+    }
   }
 }
 
