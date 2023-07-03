@@ -7,13 +7,13 @@
   color: #fff;
 
   .btn {
-    font-size: 14px;
+    font-size: 16px;
     padding: 15px 10px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     transition: color .3s ease-in-out;
 
     &:hover {
-      color: #64a2ff !important;
+      color: #dbaf00 !important;
     }
   }
 
@@ -39,6 +39,18 @@
 
       .weatherDailyDescription {
         font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .weatherDailyWindNavigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      .weatherDailyWind {
+        color: rgba(255, 255, 255, 0.7);
       }
     }
   }

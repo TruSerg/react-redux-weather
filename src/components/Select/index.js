@@ -5,9 +5,9 @@ import style from "./styles.module.scss";
 
 const BasicSelect = ({ value, label, onChange, array }) => {
   return (
-    <FormControl className={style.formControl} fullWidth variant="outlined">
+    <FormControl className={style.formControl} fullWidth variant={"outlined"}>
       <InputLabel className={style.label} id="demo-simple-select-label">
-        Выберите город
+        Выберите город...
       </InputLabel>
       <Select
         className={style.select}

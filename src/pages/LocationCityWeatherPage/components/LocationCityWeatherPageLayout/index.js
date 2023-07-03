@@ -19,6 +19,7 @@ const LocationWeatherPageLayout = ({
   tempMax,
   feelsLike,
   windSpeed,
+  windDirection,
   pressure,
   humidity,
   handleShowModeComponent,
@@ -52,6 +53,7 @@ const LocationWeatherPageLayout = ({
               tempMax={tempMax}
               feelsLike={feelsLike}
               windSpeed={windSpeed}
+              windDirection={windDirection}
               pressure={pressure}
               humidity={humidity}
             />

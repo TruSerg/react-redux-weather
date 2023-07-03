@@ -10,6 +10,7 @@ export const fetchWeatherData = createAsyncThunk(
 
       const data = res.data;
 
+      console.log(data);
       return data;
     } catch (error) {
       return rejectedWithValue(error.message);
@@ -29,6 +30,7 @@ const weatherDataSlice = createSlice({
     tempMax: "",
     feelsLike: "",
     windSpeed: "",
+    windDirection: "",
     pressure: "",
     humidity: "",
     weather: [],
@@ -49,6 +51,7 @@ const weatherDataSlice = createSlice({
       state.tempMax = payload.main.temp_max;
       state.feelsLike = payload.main.feels_like;
       state.windSpeed = payload.wind.speed;
+      state.windDirection = payload.wind.deg;
       state.pressure = payload.main.pressure;
       state.humidity = payload.main.humidity;
       state.weather = payload.weather;

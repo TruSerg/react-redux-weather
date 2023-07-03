@@ -3,7 +3,7 @@ const useGetFiveDaysWeatherForecast = (weatherList) => {
     (item) =>
       new Date(item.dt_txt).getHours() === 12 &&
       new Date(item.dt_txt).getDate() > new Date().getDate() &&
-      new Date(item.dt_txt).getDate() < new Date().getDate() + 6
+      new Date(item.dt_txt).getDate() < new Date().getDate() + 7
   );
 
   return { fiveDaysWeatherList };

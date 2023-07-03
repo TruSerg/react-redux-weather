@@ -28,8 +28,11 @@ const WeatherSlider = ({ weatherDailyList, found }) => {
           768: {
             slidesPerView: 6,
           },
-          490: {
+          510: {
             slidesPerView: 4,
+          },
+          420: {
+            slidesPerView: 3,
           },
           320: {
             slidesPerView: 2,

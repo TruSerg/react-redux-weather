@@ -16,6 +16,14 @@
       margin-bottom: 10px;
     }
 
+    .weatherWind {
+      color: #fff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
     .weatherDescr {
       color: #fff;
       font-size: 20px;

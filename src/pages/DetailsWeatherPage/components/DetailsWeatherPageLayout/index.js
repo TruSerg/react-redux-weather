@@ -13,6 +13,7 @@ const DetailsWeatherPageLayout = ({
   tempMax,
   feelsLike,
   windSpeed,
+  windDirection,
   pressure,
   humidity,
 }) => {
@@ -30,6 +31,7 @@ const DetailsWeatherPageLayout = ({
           tempMax={tempMax}
           feelsLike={feelsLike}
           windSpeed={windSpeed}
+          windDirection={windDirection}
           pressure={pressure}
           humidity={humidity}
         />

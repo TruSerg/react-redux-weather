@@ -1,18 +1,19 @@
-.formControl {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .label {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .select {
   color: rgba(255, 255, 255, 0.6) !important;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 5px;
+  transition: color .3s ease-in-out !important;
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 1) !important;
+  }
 
   svg {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6) !important;
   }
 }
 

@@ -22,6 +22,7 @@ const WorldWeatherPageLayout = ({
   tempMax,
   feelsLike,
   windSpeed,
+  windDirection,
   pressure,
   humidity,
   weather,
@@ -77,6 +78,7 @@ const WorldWeatherPageLayout = ({
                     tempMax={tempMax}
                     feelsLike={feelsLike}
                     windSpeed={windSpeed}
+                    windDirection={windDirection}
                     pressure={pressure}
                     humidity={humidity}
                   />

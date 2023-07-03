@@ -20,6 +20,7 @@ const MainWeatherPageLayout = ({
   tempMax,
   feelsLike,
   windSpeed,
+  windDirection,
   pressure,
   humidity,
   weather,
@@ -73,6 +74,7 @@ const MainWeatherPageLayout = ({
                   tempMax={tempMax}
                   feelsLike={feelsLike}
                   windSpeed={windSpeed}
+                  windDirection={windDirection}
                   pressure={pressure}
                   humidity={humidity}
                 />

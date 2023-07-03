@@ -21,6 +21,7 @@ const DetailsWeatherPageContainer = () => {
       tempMax={weatherDailyDetailsItem.main.temp_max}
       feelsLike={weatherDailyDetailsItem.main.feels_like}
       windSpeed={weatherDailyDetailsItem.wind.speed}
+      windDirection={weatherDailyDetailsItem.wind.deg}
       pressure={weatherDailyDetailsItem.main.pressure}
       humidity={weatherDailyDetailsItem.main.humidity}
     />

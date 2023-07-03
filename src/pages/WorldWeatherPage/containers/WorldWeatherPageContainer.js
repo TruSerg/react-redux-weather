@@ -26,6 +26,7 @@ const WorldWeatherPageContainer = () => {
     tempMax,
     feelsLike,
     windSpeed,
+    windDirection,
     pressure,
     humidity,
     weather,
@@ -75,6 +76,7 @@ const WorldWeatherPageContainer = () => {
       tempMax={tempMax}
       feelsLike={feelsLike}
       windSpeed={windSpeed}
+      windDirection={windDirection}
       pressure={pressure}
       humidity={humidity}
       weather={weather}

@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import WindNavigation from "../WindNavigation";
+
 import style from "./styles.module.scss";
 
 const DetailsWeatherData = ({
@@ -7,6 +9,7 @@ const DetailsWeatherData = ({
   tempMax,
   feelsLike,
   windSpeed,
+  windDirection,
   pressure,
   humidity,
 }) => {
@@ -16,14 +19,14 @@ const DetailsWeatherData = ({
         <div>
           <p className={style.weatherItem}>Мин</p>
           <span className={style.weatherDescr}>
-            {Math.round(tempMin)}
+            {Math.floor(tempMin)}
             {"\u00b0"}C
           </span>
         </div>
         <div>
           <p className={style.weatherItem}>Макс</p>
           <span className={style.weatherDescr}>
-            {Math.round(tempMax)}
+            {Math.ceil(tempMax)}
             {"\u00b0"}C
           </span>
         </div>
@@ -36,9 +39,12 @@ const DetailsWeatherData = ({
         </div>
         <div>
           <p className={style.weatherItem}>Скорость ветра</p>
-          <span className={style.weatherDescr}>
-            {Math.round(windSpeed)} км/ч
-          </span>
+          <div className={style.weatherWind}>
+            <WindNavigation deg={windDirection} />
+            <span className={style.weatherDescr}>
+              {Math.round(windSpeed)} км/ч
+            </span>
+          </div>
         </div>
         <div>
           <p className={style.weatherItem}>Давление</p>

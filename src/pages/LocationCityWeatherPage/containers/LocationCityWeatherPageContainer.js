@@ -23,6 +23,7 @@ const LocationCityWeatherPageContainer = () => {
     tempMax,
     feelsLike,
     windSpeed,
+    windDirection,
     pressure,
     humidity,
     weather,
@@ -62,6 +63,7 @@ const LocationCityWeatherPageContainer = () => {
       tempMax={tempMax}
       feelsLike={feelsLike}
       windSpeed={windSpeed}
+      windDirection={windDirection}
       pressure={pressure}
       humidity={humidity}
       weather={weather}

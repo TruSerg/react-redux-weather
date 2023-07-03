@@ -1,13 +1,14 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { memo } from "react";
-
 import moment from "moment";
 import ru from "moment/locale/ru";
 
 import { foundItemWeatherDaily } from "../../store/weatherDailySlice";
 
 import { ROUTES } from "../../routes/routeNames";
+
+import WindNavigation from "../WindNavigation";
 
 import style from "./styles.module.scss";
 
@@ -41,9 +42,13 @@ const WeatherDailyData = ({ dt, date, main, weather, wind }) => {
             <p className={style.weatherDailyDescription}>{description}</p>
           </div>
         ))}
-        <p className={style.weatherDailyDescription}>
-          {Math.round(wind.speed)} км/ч
-        </p>
+        <div className={style.weatherDailyWindNavigation}>
+          <WindNavigation deg={wind.deg} />
+
+          <p className={style.weatherDailyWind}>
+            {Math.round(wind.speed)} км/ч
+          </p>
+        </div>
       </div>
     </div>
   );

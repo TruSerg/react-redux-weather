@@ -11,12 +11,12 @@
       display: flex;
       align-items: center;
       font-weight: 600;
-      color: #00ffff;
+      color: #dbaf00;
       font-size: 25px;
       transition: color .3s ease-in-out;
 
       &:hover {
-        color: #dbaf00;
+        color: #00ffff;
       }
     }
 
@@ -31,7 +31,7 @@
         transition: color .3s ease-in-out;
 
         &:hover {
-          color: #64a2ff;
+          color: #dbaf00;
         }
       }
     }
