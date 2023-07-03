@@ -35,9 +35,7 @@ const LocationWeatherPageLayout = ({
 
             <div className={style.weatherBtn}>
               <ShowComponentButton
-                text={
-                  showMode ? "Прогноз на 5 дней" : "Более детальный прогноз"
-                }
+                text={showMode ? "Прогноз на 4 дня" : "Более детальный прогноз"}
                 handleClick={handleShowModeComponent}
               />
             </div>

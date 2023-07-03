@@ -60,7 +60,7 @@ const WorldWeatherPageLayout = ({
                     <ShowComponentButton
                       text={
                         showMode
-                          ? "Прогноз на 5 дней"
+                          ? "Прогноз на 4 дня"
                           : "Более детальный прогноз"
                       }
                       handleClick={handleShowModeComponent}

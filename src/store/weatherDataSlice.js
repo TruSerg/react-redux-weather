@@ -10,7 +10,6 @@ export const fetchWeatherData = createAsyncThunk(
 
       const data = res.data;
 
-      console.log(data);
       return data;
     } catch (error) {
       return rejectedWithValue(error.message);

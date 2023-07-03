@@ -6,9 +6,9 @@ export const getUserLocationWeather = createAsyncThunk(
   "userLocation/getUserLocation",
   async (_, { rejectedWithValue }) => {
     try {
-      const res = await axios.get("https://ipapi.co/city");
+      const res = await axios("https://ipapi.co/city/");
 
-      const data = res.data;
+      const data = await res.data;
 
       return data;
     } catch (error) {
