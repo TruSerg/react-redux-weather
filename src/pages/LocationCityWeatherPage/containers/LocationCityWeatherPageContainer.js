@@ -27,12 +27,11 @@ const LocationCityWeatherPageContainer = () => {
     pressure,
     humidity,
     weather,
-    isLoading,
   } = useSelector((state) => state.weatherData);
 
   const { weatherDailyList } = useSelector((state) => state.weatherDaily);
 
-  const { cityName } = useSelector((state) => state.getUserLocation);
+  const { isLoading, cityName } = useSelector((state) => state.getUserLocation);
 
   const { fiveDaysWeatherList } =
     useGetFiveDaysWeatherForecast(weatherDailyList);
