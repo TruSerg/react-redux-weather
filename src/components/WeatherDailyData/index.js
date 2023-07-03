@@ -45,9 +45,7 @@ const WeatherDailyData = ({ dt, date, main, weather, wind }) => {
         <div className={style.weatherDailyWindNavigation}>
           <WindNavigation deg={wind.deg} />
 
-          <p className={style.weatherDailyWind}>
-            {Math.round(wind.speed)} км/ч
-          </p>
+          <p className={style.weatherDailyWind}>{Math.round(wind.speed)} м/с</p>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ const DetailsWeatherData = ({
           <div className={style.weatherWind}>
             <WindNavigation deg={windDirection} />
             <span className={style.weatherDescr}>
-              {Math.round(windSpeed)} км/ч
+              {Math.round(windSpeed)} м/с
             </span>
           </div>
         </div>
