@@ -10,6 +10,7 @@ import {
 } from "../../../hooks";
 
 import WorldWeatherPageLayout from "../components/WorldWeatherPageLayout";
+import { logDOM } from "@testing-library/react";
 
 const WorldWeatherPageContainer = () => {
   const dispatch = useDispatch();
@@ -48,10 +49,10 @@ const WorldWeatherPageContainer = () => {
     (e) => {
       e.preventDefault();
 
-      if (inputCityNameValue) {
-        dispatch(fetchWeatherData(inputCityNameValue.toLowerCase().trim()));
+      const nameCityValue = inputCityNameValue.toLowerCase().trim();
 
-        console.log(inputCityNameValue);
+      if (nameCityValue) {
+        dispatch(fetchWeatherData(nameCityValue));
 
         setIsDataLoaded(false);
         setInputCityNameValue("");
