@@ -48,8 +48,10 @@ const WorldWeatherPageContainer = () => {
     (e) => {
       e.preventDefault();
 
-      if (inputCityNameValue.trim()) {
-        dispatch(fetchWeatherData(inputCityNameValue.trim().toLowerCase()));
+      if (inputCityNameValue) {
+        dispatch(fetchWeatherData(inputCityNameValue.toLowerCase().trim()));
+
+        console.log(inputCityNameValue);
 
         setIsDataLoaded(false);
         setInputCityNameValue("");
