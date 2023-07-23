@@ -10,7 +10,6 @@ import {
 } from "../../../hooks";
 
 import WorldWeatherPageLayout from "../components/WorldWeatherPageLayout";
-import { logDOM } from "@testing-library/react";
 
 const WorldWeatherPageContainer = () => {
   const dispatch = useDispatch();
@@ -58,12 +57,12 @@ const WorldWeatherPageContainer = () => {
         setInputCityNameValue("");
       }
     },
-    [inputCityNameValue]
+    [dispatch, inputCityNameValue]
   );
 
   useEffect(() => {
     dispatch(fetchWeatherDaily([lat, lon]));
-  }, [lat, lon]);
+  }, [dispatch, lat, lon]);
 
   return (
     <WorldWeatherPageLayout

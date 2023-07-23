@@ -40,15 +40,15 @@ const LocationCityWeatherPageContainer = () => {
 
   useEffect(() => {
     dispatch(getUserLocationWeather());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchWeatherData(cityName));
-  }, [cityName]);
+  }, [dispatch, cityName]);
 
   useEffect(() => {
     dispatch(fetchWeatherDaily([lat, lon]));
-  }, [lat, lon]);
+  }, [dispatch, lat, lon]);
 
   return (
     <LocationCityWeatherPageLayout

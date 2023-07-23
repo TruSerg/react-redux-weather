@@ -48,15 +48,15 @@ const MainWeatherPageContainer = () => {
 
   useEffect(() => {
     dispatch(fetchWeatherData("Минск"));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchWeatherData(selectCityNameValue));
-  }, [selectCityNameValue]);
+  }, [dispatch, selectCityNameValue]);
 
   useEffect(() => {
     dispatch(fetchWeatherDaily([lat, lon]));
-  }, [lat, lon]);
+  }, [dispatch, lat, lon]);
 
   return (
     <MainWeatherPageLayout

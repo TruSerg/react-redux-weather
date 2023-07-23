@@ -1,9 +1,7 @@
 import { useSelector } from "react-redux";
+import moment from "moment";
 
 import DetailsWeatherPageLayout from "../components/DetailsWeatherPageLayout";
-
-import moment from "moment";
-import ru from "moment/locale/ru";
 
 const DetailsWeatherPageContainer = () => {
   const { weatherDailyDetailsItem } = useSelector(
