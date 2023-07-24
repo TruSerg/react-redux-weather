@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 import moment from "moment";
+import "moment/locale/ru";
 
 import { foundItemWeatherDaily } from "../../store/weatherDailySlice";
 
