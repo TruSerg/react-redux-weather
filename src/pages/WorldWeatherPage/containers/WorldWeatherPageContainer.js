@@ -48,7 +48,7 @@ const WorldWeatherPageContainer = () => {
     (e) => {
       e.preventDefault();
 
-      const nameCityValue = inputCityNameValue.toLowerCase().trim();
+      const nameCityValue = inputCityNameValue.trim().toLowerCase();
 
       if (nameCityValue) {
         dispatch(fetchWeatherData(nameCityValue));
