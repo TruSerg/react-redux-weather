@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { LocationOn, Public, FlagCircle } from "@mui/icons-material";
 
 import { ROUTES } from "../../routes/routeNames";
+
 import Container from "../Container";
 
-import style from "./styles.module.scss";
-
 import logo from "../../static/img/logo.png";
+
+import style from "./styles.module.scss";
 
 const Header = () => {
   return (
@@ -25,13 +27,22 @@ const Header = () => {
 
           <nav className={style.headerNavigation}>
             <Link to={ROUTES.LOCATION_WEATHER_PAGE}>
-              <Button className={style.headerBtn}>Ваша локация</Button>
+              <button className={style.headerBtn}>
+                <LocationOn className={style.headerIcon} fontSize="inherit" />
+                <p>Ваша локация</p>
+              </button>
             </Link>
             <Link to={ROUTES.BELARUS_WEATHER_PAGE}>
-              <Button className={style.headerBtn}>Погода в Беларуси</Button>
+              <button className={style.headerBtn}>
+                <FlagCircle className={style.headerIcon} fontSize="inherit" />
+                Погода в Беларуси
+              </button>
             </Link>
             <Link to={ROUTES.WORLD_WEATHER_PAGE}>
-              <Button className={style.headerBtn}>Погода в мире</Button>
+              <button className={style.headerBtn}>
+                <Public className={style.headerIcon} fontSize="inherit" />
+                Погода в мире
+              </button>
             </Link>
           </nav>
         </div>
