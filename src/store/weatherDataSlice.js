@@ -21,6 +21,7 @@ const weatherDataSlice = createSlice({
   name: "weatherData",
   initialState: {
     weatherData: {},
+    currentWeather: "",
     cityName: "",
     lon: "",
     lat: "",
@@ -43,6 +44,7 @@ const weatherDataSlice = createSlice({
     [fetchWeatherData.fulfilled]: (state, { payload }) => {
       state.weatherData = payload;
       state.cityName = payload.name;
+      state.currentWeather = payload.weather.map(({ main }) => main).join();
       state.lon = payload.coord.lon;
       state.lat = payload.coord.lat;
       state.temp = payload.main.temp;
