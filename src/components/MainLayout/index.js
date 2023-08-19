@@ -9,7 +9,7 @@ import bgClouds from "../../static/img/bg-clouds.jpg";
 import bgRain from "../../static/img/bg-rain.jpg";
 import bgThunderstorm from "../../static/img/bg-thunderstorm.jpg";
 import bgFog from "../../static/img/bg-fog.jpg";
-import bgSnow from "../../static/img/bg-snowy.jpg";
+import bgSnow from "../../static/img/bg-snow.jpg";
 
 import style from "./styles.module.scss";
 
@@ -43,6 +43,9 @@ const MainLayout = ({ children }) => {
         }) ||
         (currentWeather === "Snow" && {
           backgroundImage: `url(${bgSnow})`,
+        }) ||
+        (currentWeather === "Haze" && {
+          backgroundImage: `url(${bgFog})`,
         }) || { backgroundImage: `url(${bg})` }
       }
     >

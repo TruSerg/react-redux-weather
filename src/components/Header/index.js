@@ -28,19 +28,19 @@ const Header = () => {
             <Link to={ROUTES.LOCATION_WEATHER_PAGE}>
               <button className={style.headerBtn}>
                 <LocationOn className={style.headerIcon} fontSize="inherit" />
-                <p>Ваша локация</p>
+                <p className={style.headerText}>Ваша локация</p>
               </button>
             </Link>
             <Link to={ROUTES.BELARUS_WEATHER_PAGE}>
               <button className={style.headerBtn}>
                 <FlagCircle className={style.headerIcon} fontSize="inherit" />
-                Погода в Беларуси
+                <p className={style.headerText}>Погода в Беларуси</p>
               </button>
             </Link>
             <Link to={ROUTES.WORLD_WEATHER_PAGE}>
               <button className={style.headerBtn}>
                 <Public className={style.headerIcon} fontSize="inherit" />
-                Погода в мире
+                <p className={style.headerText}>Погода в мире</p>
               </button>
             </Link>
           </nav>

@@ -30,9 +30,14 @@
         align-items: center;
         gap: 10px;
         font-size: 16px;
+        color: #fff;
         padding: 10px;
-        color: rgba(255, 255, 255, 1);
         transition: color .3s ease-in-out;
+
+        .headerText {
+          color: rgba(255, 255, 255, 0.7);
+          transition: color .3s ease-in-out;
+        }
 
         .headerIcon {
           font-size: 50px;
@@ -41,6 +46,10 @@
         &:hover {
           color: #00ffff;;
         }
+      }
+
+      .headerBtn:hover .headerText {
+        color: rgba(255, 255, 255, 1);
       }
     }
   }
@@ -77,12 +86,6 @@
       .headerNavigation {
         gap: 20px;
         justify-content: space-around;
-
-        .headerBtn {
-          .headerIcon {
-            font-size: 45px;
-          }
-        }
       }
     }
   }
