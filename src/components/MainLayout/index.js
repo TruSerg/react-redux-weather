@@ -30,7 +30,7 @@ const MainLayout = ({ children }) => {
           backgroundImage: `url(${bgThunderstorm})`,
         }) ||
         (currentWeather === "Clouds" && {
-          backgroundImage: `url(${bgClouds})`,
+          backgroundImage: `url(${bgSnow})`,
         }) ||
         (currentWeather === "Fog" && {
           backgroundImage: `url(${bgFog})`,
