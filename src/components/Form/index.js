@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { OutlinedInput, Button } from "@mui/material";
+import { Button, Input } from "@mui/material";
 import { SearchOutlined } from "@mui/icons-material";
 
 import style from "./styles.module.scss";
@@ -7,7 +7,7 @@ import style from "./styles.module.scss";
 const Form = ({ value, onChange, onSubmit }) => {
   return (
     <form onSubmit={onSubmit} id="myForm" className={style.form}>
-      <OutlinedInput
+      <Input
         className={style.input}
         type="text"
         name="text"
@@ -21,9 +21,9 @@ const Form = ({ value, onChange, onSubmit }) => {
         className={style.btn}
         type="submit"
         onClick={onSubmit}
-        variant="outlined"
+        variant="filled"
       >
-        <SearchOutlined fontSize="large" />
+        <SearchOutlined fontSize="inherit" />
       </Button>
     </form>
   );

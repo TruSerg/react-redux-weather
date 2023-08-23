@@ -2,19 +2,24 @@
   display: flex;
 
   .input {
-    color: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 0 20px 0 10px !important;
   }
 
   .btn {
-    color: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: 25px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
 @media (max-width: 420px) {
-  .input {
-    font-size: 14px !important;
+  .form {
+    .input {
+      font-size: 14px !important;
+    }
+
+    .btn {
+      font-size: 20px !important;
+    }
   }
 }
