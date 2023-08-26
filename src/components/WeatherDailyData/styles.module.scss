@@ -1,58 +1,61 @@
 .weatherDailyWrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 230px;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
+	display: flex;
+	flex-direction: column;
+	min-height: 230px;
+	padding: 10px;
+	text-align: center;
+	color: #fff;
 
-  .btn {
-    font-size: 16px;
-    padding: 15px 10px;
-    color: rgba(255, 255, 255, 1);
-    transition: color .3s ease-in-out;
+	.btn {
+		font-size: 16px;
+		padding: 15px 10px;
+		color: rgba(255, 255, 255, 1);
+		transition: color 0.3s ease-in-out;
 
-    &:hover {
-      color: #00ffff !important;
-    }
-  }
+		&:hover {
+			color: #00ffff !important;
+		}
+	}
 
- .weatherDailyDate {
-   font-size: 17px;
-   margin-bottom: 20px;
-   color: rgba(255, 255, 255, 0.8);
- }
+	.weatherDailyContent {
+		margin-bottom: 20px;
 
-  .weatherDailyDetails {
-    margin-top: auto;
+		.weatherDailyDate {
+			font-size: 17px;
+			color: rgba(255, 255, 255, 0.8);
+		}
+	}
 
-    .weatherDailyTemp {
-      font-size: 20px;
-    }
+	.weatherDailyDetails {
+		margin-top: auto;
 
-    .weatherDailyContent {
-      margin-top: auto;
-      min-height: 130px;
+		.weatherDailyTemp {
+			font-size: 20px;
+		}
 
-      .weatherDailyImg {
-        width: 80px;
-      }
+		.weatherDailyContent {
+			margin-top: auto;
+			min-height: 130px;
 
-      .weatherDailyDescription {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
+			.weatherDailyImg {
+				width: 80px;
+			}
 
-    .weatherDailyWindNavigation {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
+			.weatherDailyDescription {
+				font-size: 16px;
+				color: rgba(255, 255, 255, 0.8);
+			}
+		}
 
-      .weatherDailyWind {
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
-  }
+		.weatherDailyWindNavigation {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+
+			.weatherDailyWind {
+				color: rgba(255, 255, 255, 0.8);
+			}
+		}
+	}
 }

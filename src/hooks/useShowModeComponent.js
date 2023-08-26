@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { showModeComponentChange } from '../store/weatherDailySlice';
 
 const useShowModeComponent = () => {
-  const [showMode, setShowMode] = useState(false);
+	const dispatch = useDispatch();
+	const [showMode, setShowMode] = useState(false);
 
-  const handleShowModeComponent = () => {
-    setShowMode((prev) => !prev);
-  };
+	const handleShowModeComponent = () => {
+		setShowMode(prev => !prev);
 
-  return { showMode, handleShowModeComponent };
+		dispatch(showModeComponentChange(showMode));
+	};
+
+	return { showMode, handleShowModeComponent };
 };
 
 export default useShowModeComponent;

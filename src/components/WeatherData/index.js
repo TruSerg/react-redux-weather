@@ -1,30 +1,30 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import style from "./styles.module.scss";
+import style from './styles.module.scss';
 
 const WeatherDataLayout = ({ temp, weather, cityName }) => {
-  return (
-    <div className={style.weatherDescrArea}>
-      <h1 className={style.weatherTitle}>{cityName}</h1>
-      <p className={style.weatherDeg}>
-        {Math.round(temp)}
-        {"\u00b0"}
-      </p>
+	return (
+		<div className={style.weatherDescrArea}>
+			<h1 className={style.weatherTitle}>{cityName}</h1>
+			<p className={style.weatherDeg}>
+				{Math.round(temp)}
+				{'\u00b0'}
+			</p>
 
-      {weather.map(({ id, description, icon }) => {
-        return (
-          <div className={style.weatherDescr} key={id}>
-            <img
-              className={style.weatherImg}
-              src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-              alt="иконка погоды"
-            />
-            <p>{description}</p>
-          </div>
-        );
-      })}
-    </div>
-  );
+			{weather.map(({ id, description, icon }) => {
+				return (
+					<div className={style.weatherDescr} key={id}>
+						<img
+							className={style.weatherImg}
+							src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+							alt='иконка погоды'
+						/>
+						<p>{description}</p>
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 export default memo(WeatherDataLayout);
