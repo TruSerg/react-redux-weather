@@ -1,25 +1,49 @@
 .form {
-  display: flex;
+	display: flex;
 
-  .input {
-    color: rgba(255, 255, 255, 0.8) !important;
-    padding: 0 20px 0 10px !important;
-  }
+	.input {
+		color: rgba(255, 255, 255, 0.8) !important;
+		padding: 0 20px 0 10px !important;
+		transition: color 0.3s ease-in-out !important;
 
-  .btn {
-    font-size: 25px !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
+		&::after {
+			content: '';
+			border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+		}
+
+		&:hover::after {
+			border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+		}
+
+		&::before {
+			content: '';
+			border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+		}
+
+		&:hover::before {
+			border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+		}
+	}
+
+	.btn {
+		font-size: 25px !important;
+		color: rgba(255, 255, 255, 0.8) !important;
+		transition: color 0.3s ease-in-out !important;
+
+		&:hover {
+			color: rgba(255, 255, 255, 1) !important;
+		}
+	}
 }
 
 @media (max-width: 420px) {
-  .form {
-    .input {
-      font-size: 14px !important;
-    }
+	.form {
+		.input {
+			font-size: 14px !important;
+		}
 
-    .btn {
-      font-size: 20px !important;
-    }
-  }
+		.btn {
+			font-size: 20px !important;
+		}
+	}
 }
