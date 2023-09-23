@@ -1,43 +1,41 @@
 .form {
 	display: flex;
+	gap: 10px;
 
 	.input {
 		color: rgba(255, 255, 255, 0.8) !important;
-		padding: 0 20px 0 10px !important;
-		transition: color 0.3s ease-in-out !important;
+		background-color: transparent !important;
+		border: 1px solid rgba(255, 255, 255, 0.6) !important;
+		transition: all 0.3s ease-in-out !important;
 
-		&::after {
-			content: '';
-			border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+		&:focus-within::before {
+			border: 1px solid rgba(255, 255, 255, 1) !important;
+			--Input-focused: 0;
 		}
 
-		&:hover::after {
-			border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
-		}
-
-		&::before {
-			content: '';
-			border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
-		}
-
-		&:hover::before {
-			border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+		&:hover {
+			border: 1px solid rgba(255, 255, 255, 1) !important;
 		}
 	}
 
 	.btn {
 		font-size: 25px !important;
-		color: rgba(255, 255, 255, 0.8) !important;
-		transition: color 0.3s ease-in-out !important;
+		color: rgba(255, 255, 255, 0.6) !important;
+		background-color: transparent !important;
+		border: 1px solid rgba(255, 255, 255, 0.6);
+		transition: all 0.3s ease-in-out !important;
 
 		&:hover {
 			color: rgba(255, 255, 255, 1) !important;
+			border: 1px solid rgba(255, 255, 255, 1);
 		}
 	}
 }
 
 @media (max-width: 420px) {
 	.form {
+		gap: 5px;
+
 		.input {
 			font-size: 14px !important;
 		}

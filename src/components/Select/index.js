@@ -3,17 +3,17 @@ import { FormControl, MenuItem, Select, InputLabel } from '@mui/material';
 
 import style from './styles.module.scss';
 
-const BasicSelect = ({ value, label, onChange, array }) => {
+const BasicSelect = ({ value, onChange, array }) => {
 	return (
-		<FormControl fullWidth variant='filled'>
+		<FormControl variant='filled' fullWidth>
 			<InputLabel className={style.label} id='demo-simple-select-label'>
-				Выберите город...
+				Выберите город
 			</InputLabel>
 			<Select
 				className={style.select}
 				labelId='demo-simple-select-label'
 				id='demo-simple-select'
-				label={label}
+				label='Выберите город'
 				value={value}
 				onChange={onChange}
 			>
