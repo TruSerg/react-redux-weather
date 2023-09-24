@@ -36,7 +36,6 @@ const MainWeatherPageLayout = ({
 						<div className={style.weatherSelect}>
 							<Select
 								value={selectCityNameValue}
-								label={cityName}
 								array={cities}
 								onChange={handleSelectCityNameChange}
 							/>

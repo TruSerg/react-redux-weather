@@ -42,8 +42,8 @@ const MainWeatherPageContainer = () => {
 
 	const { showMode, handleShowModeComponent } = useShowModeComponent();
 
-	const handleSelectCityNameChange = useCallback(e => {
-		setSelectCityNameValue(e.target.value);
+	const handleSelectCityNameChange = useCallback((e, newValue) => {
+		setSelectCityNameValue(newValue);
 	}, []);
 
 	useEffect(() => {
