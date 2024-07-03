@@ -4,7 +4,7 @@ import api from '../http';
 
 export const fetchWeatherData = createAsyncThunk(
 	'weatherData/fetchWeatherData',
-	async (cityName, { rejectedWithValue }) => {
+	async (cityName, { rejectWithValue }) => {
 		try {
 			const res = await api.get(`weather?q=${cityName}`);
 
@@ -12,7 +12,7 @@ export const fetchWeatherData = createAsyncThunk(
 
 			return data;
 		} catch (error) {
-			return rejectedWithValue(error.message);
+			return rejectWithValue(error.response.data);
 		}
 	}
 );
@@ -34,12 +34,15 @@ const weatherDataSlice = createSlice({
 		pressure: '',
 		humidity: '',
 		weather: [],
+		error: null,
+		isError: false,
 		isLoading: false,
 	},
 
 	extraReducers: {
 		[fetchWeatherData.pending]: state => {
 			state.isLoading = true;
+			state.isError = false;
 		},
 		[fetchWeatherData.fulfilled]: (state, { payload }) => {
 			state.weatherData = payload;
@@ -57,9 +60,12 @@ const weatherDataSlice = createSlice({
 			state.humidity = payload.main.humidity;
 			state.weather = payload.weather;
 			state.isLoading = false;
+			state.isError = false;
 		},
-		[fetchWeatherData.rejected]: state => {
+		[fetchWeatherData.rejected]: (state, action) => {
 			state.isLoading = false;
+			state.isError = true;
+			state.error = action.error.message;
 		},
 	},
 });

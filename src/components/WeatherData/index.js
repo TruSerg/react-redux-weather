@@ -3,8 +3,6 @@ import { memo } from 'react';
 import style from './styles.module.scss';
 
 const WeatherDataLayout = ({ temp, weather, cityName }) => {
-	console.log(weather);
-
 	return (
 		<div className={style.weatherDescrArea}>
 			<h1 className={style.weatherTitle}>{cityName}</h1>

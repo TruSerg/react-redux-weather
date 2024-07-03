@@ -5,6 +5,7 @@ import Select from '../../../../components/Select';
 import DetailsWeatherData from '../../../../components/DetailsWeatherData';
 import WeatherSlider from '../../../../components/WeatherSlider';
 import ShowComponentButton from '../../../../components/Buttons/ShowComponentButton';
+import NoWeatherDataComponent from '../../../../components/NoWeatherDataComponent';
 
 import style from './styles.module.scss';
 
@@ -42,44 +43,52 @@ const MainWeatherPageLayout = ({
 						</div>
 					</div>
 
-					<>
-						{isLoading ? (
-							<Loader />
-						) : (
-							<>
-								<WeatherData
-									temp={temp}
-									weather={weather}
-									cityName={cityName}
-								/>
-
-								<div className={style.weatherBtn}>
-									<ShowComponentButton
-										text={
-											showMode ? 'Прогноз на 4 дня' : 'Более детальный прогноз'
-										}
-										handleClick={handleShowModeComponent}
+					{isLoading ? (
+						<Loader />
+					) : (
+						<>
+							{cityName !== '' ? (
+								<>
+									<WeatherData
+										temp={temp}
+										weather={weather}
+										cityName={cityName}
 									/>
-								</div>
 
-								{showMode ? (
-									<WeatherSlider weatherDailyList={weatherDailyList} />
-								) : (
-									<WeatherSlider weatherDailyList={fiveDaysWeatherList} />
-								)}
+									<div className={style.weatherBtn}>
+										<ShowComponentButton
+											text={
+												showMode
+													? 'Прогноз на 4 дня'
+													: 'Более детальный прогноз'
+											}
+											handleClick={handleShowModeComponent}
+										/>
+									</div>
 
-								<DetailsWeatherData
-									tempMin={tempMin}
-									tempMax={tempMax}
-									feelsLike={feelsLike}
-									windSpeed={windSpeed}
-									windDirection={windDirection}
-									pressure={pressure}
-									humidity={humidity}
+									{showMode ? (
+										<WeatherSlider weatherDailyList={weatherDailyList} />
+									) : (
+										<WeatherSlider weatherDailyList={fiveDaysWeatherList} />
+									)}
+
+									<DetailsWeatherData
+										tempMin={tempMin}
+										tempMax={tempMax}
+										feelsLike={feelsLike}
+										windSpeed={windSpeed}
+										windDirection={windDirection}
+										pressure={pressure}
+										humidity={humidity}
+									/>
+								</>
+							) : (
+								<NoWeatherDataComponent
+									text={'Ошибка получения данных погоды!'}
 								/>
-							</>
-						)}
-					</>
+							)}
+						</>
+					)}
 				</div>
 			</Container>
 		</div>

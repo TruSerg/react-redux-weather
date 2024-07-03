@@ -4,7 +4,7 @@ import api from '../http';
 
 export const fetchWeatherDaily = createAsyncThunk(
 	'weatherDaily/fetchWeatherDaily',
-	async ([lat, lon], { rejectedWithValue }) => {
+	async ([lat, lon], { rejectWithValue }) => {
 		try {
 			const res = await api.get(`forecast?lat=${lat}&lon=${lon}`);
 
@@ -12,7 +12,7 @@ export const fetchWeatherDaily = createAsyncThunk(
 
 			return data;
 		} catch (error) {
-			return rejectedWithValue(error.message);
+			return rejectWithValue(error.response.data);
 		}
 	}
 );
@@ -24,6 +24,8 @@ const weatherDailySlice = createSlice({
 		weatherDailyList: [],
 		weatherFiveDaysList: [],
 		weatherDailyDetailsItem: {},
+		error: null,
+		isError: false,
 		isLoading: false,
 		isShowMode: true,
 	},
@@ -46,13 +48,18 @@ const weatherDailySlice = createSlice({
 	extraReducers: {
 		[fetchWeatherDaily.pending]: state => {
 			state.isLoading = true;
+			state.isError = false;
 		},
 		[fetchWeatherDaily.fulfilled]: (state, { payload }) => {
+			state.isLoading = false;
+			state.isError = false;
 			state.weatherDaily = payload;
 			state.weatherDailyList = payload.list;
 		},
-		[fetchWeatherDaily.rejected]: state => {
+		[fetchWeatherDaily.rejected]: (state, action) => {
 			state.isLoading = false;
+			state.isError = true;
+			state.error = action.error.message;
 		},
 	},
 });

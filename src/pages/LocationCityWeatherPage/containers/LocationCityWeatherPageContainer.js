@@ -27,11 +27,14 @@ const LocationCityWeatherPageContainer = () => {
 		pressure,
 		humidity,
 		weather,
+		error,
+		isError,
 	} = useSelector(state => state.weatherData);
 
 	const { weatherDailyList } = useSelector(state => state.weatherDaily);
 
-	const { isLoading, cityName } = useSelector(state => state.getUserLocation);
+	const { isLocationLoading, isLocationError, errorLocation, cityName } =
+		useSelector(state => state.getUserLocation);
 
 	const { fiveDaysWeatherList } =
 		useGetFiveDaysWeatherForecast(weatherDailyList);
@@ -53,9 +56,12 @@ const LocationCityWeatherPageContainer = () => {
 	return (
 		<LocationCityWeatherPageLayout
 			showMode={showMode}
-			isLoading={isLoading}
+			isLocationLoading={isLocationLoading}
+			isLocationError={isLocationError}
+			isError={isError}
 			weatherDailyList={weatherDailyList}
 			fiveDaysWeatherList={fiveDaysWeatherList}
+			errorLocation={errorLocation}
 			cityName={cityName}
 			temp={temp}
 			tempMin={tempMin}
@@ -66,6 +72,7 @@ const LocationCityWeatherPageContainer = () => {
 			pressure={pressure}
 			humidity={humidity}
 			weather={weather}
+			error={error}
 			handleShowModeComponent={handleShowModeComponent}
 		/>
 	);
