@@ -34,7 +34,6 @@ const weatherDataSlice = createSlice({
 		pressure: '',
 		humidity: '',
 		weather: [],
-		error: null,
 		isError: false,
 		isLoading: false,
 	},
@@ -62,10 +61,9 @@ const weatherDataSlice = createSlice({
 			state.isLoading = false;
 			state.isError = false;
 		},
-		[fetchWeatherData.rejected]: (state, action) => {
+		[fetchWeatherData.rejected]: state => {
 			state.isLoading = false;
 			state.isError = true;
-			state.error = action.error.message;
 		},
 	},
 });

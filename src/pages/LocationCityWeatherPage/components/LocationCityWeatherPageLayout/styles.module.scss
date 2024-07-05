@@ -1,20 +1,35 @@
 .weather {
-  margin-top: 50px;
+	margin-top: 50px;
 
-  .weatherBtn {
-    display: flex;
-    justify-content: flex-end;
-  }
+	.weatherTitle {
+		font-size: 40px;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 20px;
+	}
+
+	.weatherBtn {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
 @media (max-width: 620px) {
-  .weather {
-    margin-top: 30px;
-  }
+	.weather {
+		margin-top: 30px;
+
+		.weatherTitle {
+			font-size: 26px;
+		}
+	}
 }
 
 @media (max-width: 420px) {
-  .weather {
-    margin-top: 20px;
-  }
+	.weather {
+		margin-top: 20px;
+
+		.weatherTitle {
+			font-size: 24px;
+		}
+	}
 }

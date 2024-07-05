@@ -24,7 +24,6 @@ const weatherDailySlice = createSlice({
 		weatherDailyList: [],
 		weatherFiveDaysList: [],
 		weatherDailyDetailsItem: {},
-		error: null,
 		isError: false,
 		isLoading: false,
 		isShowMode: true,
@@ -56,10 +55,9 @@ const weatherDailySlice = createSlice({
 			state.weatherDaily = payload;
 			state.weatherDailyList = payload.list;
 		},
-		[fetchWeatherDaily.rejected]: (state, action) => {
+		[fetchWeatherDaily.rejected]: state => {
 			state.isLoading = false;
 			state.isError = true;
-			state.error = action.error.message;
 		},
 	},
 });

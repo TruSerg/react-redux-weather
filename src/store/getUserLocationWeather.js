@@ -21,7 +21,6 @@ const getUserLocationWeatherSlice = createSlice({
 	name: 'weatherDaily',
 	initialState: {
 		cityName: '',
-		errorLocation: null,
 		isLocationError: false,
 		isLocationLoading: false,
 	},
@@ -37,10 +36,9 @@ const getUserLocationWeatherSlice = createSlice({
 			state.isLocationError = false;
 			state.cityName = payload;
 		},
-		[getUserLocationWeather.rejected]: (state, action) => {
+		[getUserLocationWeather.rejected]: state => {
 			state.isLocationLoading = false;
 			state.isLocationError = true;
-			state.errorLocation = action.error.message;
 		},
 	},
 });

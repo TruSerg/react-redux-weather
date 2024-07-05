@@ -13,11 +13,9 @@ const LocationWeatherPageLayout = ({
 	isLocationLoading,
 	isLocationError,
 	isError,
-	error,
 	temp,
 	weather,
 	cityName,
-	errorLocation,
 	weatherDailyList,
 	fiveDaysWeatherList,
 	tempMin,
@@ -38,60 +36,42 @@ const LocationWeatherPageLayout = ({
 					<>
 						{isLocationError ? (
 							<NoWeatherDataComponent
-								text={`Ошибка получения данных ${errorLocation}!`}
+								text={'Ошибка получения данных локации!'}
 							/>
 						) : (
+							<h1 className={style.weatherTitle}>{cityName}</h1>
+						)}
+				
+						{isError ? (
+							<NoWeatherDataComponent text={'Данные погоды отсутствуют!'} />
+						) : (
 							<>
-								{isError ? (
-									<NoWeatherDataComponent
-										text={`Ошибка получения данных погоды ${error}!`}
+								<WeatherData temp={temp} weather={weather} />
+
+								<div className={style.weatherBtn}>
+									<ShowComponentButton
+										text={
+											showMode ? 'Прогноз на 4 дня' : 'Более детальный прогноз'
+										}
+										handleClick={handleShowModeComponent}
 									/>
+								</div>
+
+								{showMode ? (
+									<WeatherSlider weatherDailyList={weatherDailyList} />
 								) : (
-									<>
-										{cityName !== '' ? (
-											<>
-												<WeatherData
-													temp={temp}
-													weather={weather}
-													cityName={cityName}
-												/>
-
-												<div className={style.weatherBtn}>
-													<ShowComponentButton
-														text={
-															showMode
-																? 'Прогноз на 4 дня'
-																: 'Более детальный прогноз'
-														}
-														handleClick={handleShowModeComponent}
-													/>
-												</div>
-
-												{showMode ? (
-													<WeatherSlider weatherDailyList={weatherDailyList} />
-												) : (
-													<WeatherSlider
-														weatherDailyList={fiveDaysWeatherList}
-													/>
-												)}
-
-												<DetailsWeatherData
-													tempMin={tempMin}
-													tempMax={tempMax}
-													feelsLike={feelsLike}
-													windSpeed={windSpeed}
-													windDirection={windDirection}
-													pressure={pressure}
-													humidity={humidity}
-												/>
-											</>
-										) : (
-											<NoWeatherDataComponent
-												text={'Данные о погоде в вашем регионе отсутствуют!'}
-											/>
-										)}
-									</>
+									<WeatherSlider weatherDailyList={fiveDaysWeatherList} />
 								)}
+
+								<DetailsWeatherData
+									tempMin={tempMin}
+									tempMax={tempMax}
+									feelsLike={feelsLike}
+									windSpeed={windSpeed}
+									windDirection={windDirection}
+									pressure={pressure}
+									humidity={humidity}
+								/>
 							</>
 						)}
 					</>

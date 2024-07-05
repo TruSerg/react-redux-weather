@@ -55,7 +55,7 @@ const WorldWeatherPageLayout = ({
 								<>
 									{isError ? (
 										<NoWeatherDataComponent
-											text={`Ошибка получения данных погоды ${error}!`}
+											text={'Ошибка получения данных погоды!'}
 										/>
 									) : (
 										<>
