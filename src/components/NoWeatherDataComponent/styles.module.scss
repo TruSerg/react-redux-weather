@@ -2,15 +2,37 @@
 	max-width: auto;
 	min-height: 100px;
 	padding: 20px;
-	font-size: 22px;
+	font-size: 24px;
 	color: rgba(255, 255, 255, 0.8);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  flex-direction: column;
+	flex-direction: column;
 
 	.wrapperImg {
-		max-width: 150px;
-		min-height: 80px;
+		max-width: 200px;
+		min-height: 100px;
+	}
+}
+
+@media (max-width: 620px) {
+	.wrapper {
+		font-size: 22px;
+
+		.wrapperImg {
+			max-width: 150px;
+			min-height: 80px;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.wrapper {
+		font-size: 20px;
+
+		.wrapperImg {
+			max-width: 120px;
+			min-height: 60px;
+		}
 	}
 }

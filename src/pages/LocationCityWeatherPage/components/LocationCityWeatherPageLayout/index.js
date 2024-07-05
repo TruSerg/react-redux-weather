@@ -41,7 +41,7 @@ const LocationWeatherPageLayout = ({
 						) : (
 							<h1 className={style.weatherTitle}>{cityName}</h1>
 						)}
-				
+
 						{isError ? (
 							<NoWeatherDataComponent text={'Данные погоды отсутствуют!'} />
 						) : (
